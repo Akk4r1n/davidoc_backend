@@ -1,0 +1,5 @@
+- requests kommen zum nginx container der als proxy arbeitet und diese weiter zum flask container schickt
+- docker-compose expose gibt nur ports fürs selbe netzwerk in docker frei. So werden die ports nur für andere docker container freigegeben aber nicht im netz des hostrechners. Hiermit kann man z.B. einen port von mariadb für einen anderen container im selben docker-netzwerk freigeben der als phpmyadmin läuft. Außer dem phpmyadmin container kann niemand auf den mariadb container zugreifen weil quasi kein port offen ist.
+- docker-compose ports gibt ports für alle frei - quasi für den kompletten host und in dessen eigentlichen netzwerk. So kann man z.B. ein phpmyadmin container im lokalen netzwerk freigeben wenn man auf dem rechner mit docker ports: "80:80" konfiguriert. Damit kann jeder im selben netz über die hostip und den port 80 auf den phpmyadmin container zugreifen.
+- docker-compose -build um alle container im docker-compose zu bauen
+- docker-compose up --build -d um den stack zu starten und vorher alle container nochmal zu bauen. Der -d Parameter bedeutet "detatched". Damit kann man den Prozess vom Terminal ablösen.
