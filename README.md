@@ -9,3 +9,5 @@
 
 ## Run
 cd into the directory and do "docker-compose up --build" to build the images and run the containers
+
+point your webbrowser to the given ip and port 8080 to see the json responses
